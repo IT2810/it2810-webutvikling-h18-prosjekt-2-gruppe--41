@@ -1,5 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: sans-serif Arial;
+}
+
+.list-component {
+    display: flex;
+    flex-direction: row;
+}
+
+.list-item-component {
+    border: 2px solid black;
+    margin: 1px;
 }
