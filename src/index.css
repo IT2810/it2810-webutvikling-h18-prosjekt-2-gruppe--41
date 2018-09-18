@@ -1,5 +1,57 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
+    background: lightcyan;
+}
+
+.header {
+    text-align: center;
+    margin: 1% auto;
+    font-size: 50px;
+}
+
+.item_list {
+    display: flex;
+    flex-direction: row;
+    background: lightcyan;
+}
+
+.item {
+    margin: 1px;
+    width: 100%;
+    padding: 1%;
+    cursor: pointer;
+    background:white;
+}
+
+.item:hover{
+    background: #ebebeb;
+}
+
+.page_container {
+    background: #fbfff9;
+    width: 75%;
+    margin: 2% auto;
+}
+
+.item_view {
+    background: lightcyan;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.showroom {
+    background: white;
+    display: flex;
+    flex-direction: row;
+    margin: 1% auto;
+
+}
+
+.categories{
+    width: 20%;
+    margin: 1% auto;
 }
