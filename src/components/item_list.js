@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import ListItemComponent from './list-item-component';
+import Item from './item';
 
 //Props will be the function onTabChange, graphic, sound and text categories
-class ListComponent extends Component {
+class ItemList extends Component {
     constructor(props) {
         super(props);
         this.state = {
             //Will consist of the four list items that hold the media
-            contentList: [{bilde:1,text:2,sound:3}],
+            contentList: [{picture:"",text:"",sound:""},{picture:"",text:"",sound:""},{picture:"",text:"",sound:""}],
         }
     }
 
@@ -18,20 +18,21 @@ class ListComponent extends Component {
     }
 
 
-
+    //Map contentList to view as content tabs over content
     renderListItems() {
         return this.state.contentList.map(item => {
-            <ListItemComponent picture={item.bilde} text={item.text} sound={item.sound}/>
+            return <Item picture={item.picture} text={item.text} sound={item.sound} key={item.text}/>
         });
-    }
+    };
 
     render() {
+
         return (
             <div className={"list-component"}>
-                {this.renderListItems}
+                {this.renderListItems()}
             </div>
         )
     }
 }
 
-export default ListComponent;
+export default ItemList;

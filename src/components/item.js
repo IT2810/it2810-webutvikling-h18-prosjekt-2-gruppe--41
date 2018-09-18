@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ListItemComponent extends Component {
+class Item extends Component {
 
 
     constructor(props) {
@@ -15,11 +15,11 @@ class ListItemComponent extends Component {
     render() {
         return(
             <div className={"list-item-component"}>
-               list item
+               Item
             </div>
         )
     }
 }
 
-export default ListItemComponent;
+export default Item;
 

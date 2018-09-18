@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ListComponent from "./list-component";
+import ItemList from "./item_list";
 
-class PageContainer extends Component {
+class Page_container extends Component {
 
     constructor(props) {
         super(props);
@@ -11,7 +11,7 @@ class PageContainer extends Component {
             graphic: "",
             text: "",
             sound: "",
-        }
+        };
 
         this.onTabChange = this.onTabChange.bind(this);
     }
@@ -28,12 +28,12 @@ class PageContainer extends Component {
         return(
             <div className="page-container">
                 <div>
-                    <ListComponent onTabCange={this.onTabChange} graphic={this.graphic} text={this.text} sound={this.sound} />
+                    <ItemList onTabCange={this.onTabChange} graphic={this.graphic} text={this.text} sound={this.sound} />
                 </div>
             </div>
         )
     }
 }
 
-export default PageContainer;
+export default Page_container;
 
