@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ItemList from "./item_list";
+import CategoryList from "./category_list";
 
 class Page_container extends Component {
 
@@ -26,10 +27,21 @@ class Page_container extends Component {
 
     render() {
         return(
-            <div className="page-container">
-                <div>
-                    <ItemList onTabCange={this.onTabChange} graphic={this.graphic} text={this.text} sound={this.sound} />
+            <div className="page_container">
+                <h1 className={"header"}>SHOWROOM</h1>
+                <ItemList onTabCange={this.onTabChange} graphic={this.graphic} text={this.text} sound={this.sound} />
+
+                <div className={"showroom"}>
+                    <img src={"https://pbs.twimg.com/profile_images/972154872261853184/RnOg6UyU_400x400.jpg"}/>
+                    <div>
+                        <p>some text that is loaded</p>
+                        <button>MEDIA BUTTON</button>
+                    </div>
+                    <CategoryList/>
                 </div>
+
+
+
             </div>
         )
     }

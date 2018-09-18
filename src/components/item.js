@@ -12,9 +12,10 @@ class Item extends Component {
         }
     }
 
+
     render() {
         return(
-            <div className={"list-item-component"}>
+            <div className={"item"} onClick={this.props.selectItem}>
                Item
             </div>
         )
