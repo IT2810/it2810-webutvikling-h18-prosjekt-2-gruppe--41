@@ -7,7 +7,7 @@ class PageContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentListItem: "",
+            currentListItem: {},
             //will be the chosen category for the media.
             pictureCategory: "green",
             textCategory: "animal",
@@ -54,9 +54,7 @@ class PageContainer extends Component {
                     <div dangerouslySetInnerHTML={{__html: this.state.currentListItem.picture}} />
                     <div>
                         <p>{this.state.currentListItem.text}</p>
-                        <audio controls>
-                            <source src={this.state.currentListItem.sound} type="audio/mp3"/>
-                        </audio>
+                        <audio src={this.state.currentListItem.sound} controls/>
                     </div>
                     <CategoryList onCategoryChange={this.onCategoryChange}/>
                 </div>
