@@ -7,16 +7,16 @@ class CategoryList extends Component {
 
         return(
         <div className={"categories"}>
-            Category 1
+            Picture
             <form>
                 <div>
-                    <input type={"radio"} name={"gender"} value={"male"}/> Male
+                    <input type={"radio"} name={"picture"} value={"green"} defaultChecked onChange={() => {this.props.onCategoryChange("picture","green")}}/> Green
                 </div>
                 <div>
-                    <input type={"radio"} name={"gender"} value={"female"}/> Female
+                    <input type={"radio"} name={"picture"} value={"red"} onChange={() => {this.props.onCategoryChange("picture","red")}}/> Red
                 </div>
                 <div>
-                    <input type={"radio"} name={"gender"} value={"other"}/> Other
+                    <input type={"radio"} name={"picture"} value={"blue"} onChange={() => {this.props.onCategoryChange("picture","blue")}}/> Blue
                 </div>
             </form>
             <br/>

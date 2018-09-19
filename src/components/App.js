@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import Page_container from './page_container';
-import logo from '../logo.svg';
+import PageContainer from './page_container';
 
 class App extends Component {
   render() {
     return (
       <div>
-          <Page_container />
+          <PageContainer />
       </div>
     );
   }
