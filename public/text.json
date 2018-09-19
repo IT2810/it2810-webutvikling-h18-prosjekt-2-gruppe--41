@@ -1,4 +1,20 @@
 {
-  "text1": "Hallo1",
-  "text2": "Hallo2"
+  "city":{
+    "_0": "Stavanger",
+    "1": "Trondheim",
+    "2": "Oslo",
+    "3": "Bergen"
+  },
+  "animal":{
+    "0": "Cat",
+    "1": "Dog",
+    "2": "Fish",
+    "3": "Pig"
+  },
+  "people":{
+    "0": "Michel Jackson",
+    "1": "Henrik Høiness",
+    "2": "Kristoffer Gjerde",
+    "3": "Oscar Vik"
+  }
 }

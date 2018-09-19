@@ -13,6 +13,10 @@ class ItemList extends Component {
             sounds: [],
         };
 
+        this.updatePictures = this.updatePictures.bind(this);
+        this.updateTexts = this.updateTexts.bind(this);
+        this.updateSounds = this.updateSounds.bind(this);
+
     }
 
     //Fetch data on init
@@ -48,7 +52,14 @@ class ItemList extends Component {
     }
 
     updateTexts(){
-
+        let texts = [];
+        for(let x = 0; x < 1; x++){
+            let url = "text.json";
+            fetch(url)
+                .then(response => response.json())
+                .then(json => json.city._0)
+        }
+        this.setState({texts: texts});
     }
 
     updateSounds(){

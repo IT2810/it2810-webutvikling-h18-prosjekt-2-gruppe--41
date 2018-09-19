@@ -10,7 +10,7 @@ class PageContainer extends Component {
             currentListItem: "",
             //will be the chosen category for the media.
             pictureCategory: "green",
-            textCategory: "",
+            textCategory: "animal",
             soundCategory: "",
         };
 
@@ -33,7 +33,7 @@ class PageContainer extends Component {
         if(name === "pictureCategory"){
             this.setState({pictureCategory: value});
         }
-        else if(name === "text"){
+        else if(name === "textCategory"){
             this.setState({textCategory: value});
         }
         else if(name === "soundCategory"){
@@ -45,16 +45,16 @@ class PageContainer extends Component {
 
     render() {
         console.log("Render PageContainer");
-        console.log("current",this.state.currentListItem.picture);
+        console.log("current",this.state.currentListItem.picture,this.state.currentListItem.text);
         return(
             <div className="page_container">
                 <h1 className={"header"}>SHOWROOM</h1>
-                <ItemList onTabChange={this.onTabChange} picture={this.state.pictureCategory} text={this.state.textCategory} sound={this.state.soundCategory} />
+                <ItemList onTabChange={this.onTabChange} pictureCategory={this.state.pictureCategory} textCategory={this.state.textCategory} soundCategory={this.state.soundCategory} />
 
                 <div className={"showroom"}>
                     <div dangerouslySetInnerHTML={{__html: this.state.currentListItem.picture}} />
                     <div>
-                        <p>some text that is loaded</p>
+                        <p>{this.state.currentListItem.text}</p>
                         <button>MEDIA BUTTON</button>
                     </div>
                     <CategoryList onCategoryChange={this.onCategoryChange}/>
