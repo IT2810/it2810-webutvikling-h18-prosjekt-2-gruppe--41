@@ -26,23 +26,23 @@ class CategoryList extends Component {
                     <input type={"radio"} name={"textCategory"} defaultChecked value={"animal"} onChange={() => {this.props.onCategoryChange("textCategory","animal")}}/> Animal
                 </div>
                 <div>
-                    <input type={"radio"} name={"textCategory"} value={"people"} onChange={() => {this.props.onCategoryChange("textCategory","people")}}/>People
+                    <input type={"radio"} name={"textCategory"} value={"people"} onChange={() => {this.props.onCategoryChange("textCategory","people")}}/> People
                 </div>
                 <div>
                     <input type={"radio"} name={"textCategory"} value={"city"} onChange={() => {this.props.onCategoryChange("textCategory","city")}}/> Cities
                 </div>
             </form>
             <br/>
-            Category 3
+            Sound
             <form>
                 <div>
-                    <input type={"radio"} name={"gender"} defaultChecked value={"male"}/> Male
+                    <input type={"radio"} name={"soundCategory"} defaultChecked value={"instrument"} onChange={() => {this.props.onCategoryChange("soundCategory","instrument")}}/> Instrument
                 </div>
                 <div>
-                    <input type={"radio"} name={"gender"} value={"female"}/> Female
+                    <input type={"radio"} name={"soundCategory"} value={"animal"} onChange={() => {this.props.onCategoryChange("soundCategory","animal")}}/> Animal
                 </div>
                 <div>
-                    <input type={"radio"} name={"gender"} value={"other"}/> Other
+                    <input type={"radio"} name={"soundCategory"} value={"nature"} onChange={() => {this.props.onCategoryChange("soundCategory","nature")}}/> Nature
                 </div>
             </form>
         </div>
