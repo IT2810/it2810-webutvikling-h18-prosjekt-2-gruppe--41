@@ -9,10 +9,10 @@ class ItemList extends Component {
         super(props);
 
         this.state = {
-            pictures: ["","",""],
-            sounds: [],
-            texts: ["","",""]
-        }
+            pictures: ["","","",""],
+            sounds: ["","","",""],
+            texts: ["","","",""]
+        };
 
         this.updatePictures = this.updatePictures.bind(this);
         this.updateTexts = this.updateTexts.bind(this);
@@ -27,6 +27,7 @@ class ItemList extends Component {
         this.updateSounds();
     }
 
+    // Fetch data on props changed
     componentDidUpdate(prevProps) {
         if (prevProps.pictureCategory !== this.props.pictureCategory) {
             this.updatePictures();
@@ -40,7 +41,7 @@ class ItemList extends Component {
     }
 
     updatePictures(){
-        for(let x = 0 ; x < 3; x++ ){
+        for(let x = 0 ; x < 4; x++ ){
             let url = "img/"+ this.props.pictureCategory + "/"+ x + ".svg";
             axios.get(url)
                 .then(response => {
@@ -52,12 +53,12 @@ class ItemList extends Component {
     }
 
     updateTexts(){
-        for(let x = 0 ; x < 3; x++ ){
-            let url = `text/${this.props.textCategory}/${x}.txt`;
+        for(let x = 0 ; x < 4; x++ ){
+            let url = "text.json";
             axios.get(url)
                 .then(response => {
                     const newTexts = this.state.texts;
-                    newTexts[x] = response.data;
+                    newTexts[x] = response.data[this.props.textCategory][x];
                     this.setState({texts: newTexts});
                 });
         }

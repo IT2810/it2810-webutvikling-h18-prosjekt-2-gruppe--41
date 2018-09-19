@@ -20,17 +20,12 @@ class PageContainer extends Component {
 
 
 
-    //Fetch data on props update
-    /**/
-
     onTabChange(listItem){
         this.setState({
             currentListItem: listItem
             }
         )
     }
-
-
 
 
     //Make sure that when a category is changed, we need to render again
@@ -45,11 +40,11 @@ class PageContainer extends Component {
         else if(name === "soundCategory"){
             this.setState({soundCategory: value});
         }
+
     }
 
 
     render() {
-        console.log(this.state.pictures);
         return(
             <div className="page_container">
                 <h1 className={"header"}>SHOWROOM</h1>
