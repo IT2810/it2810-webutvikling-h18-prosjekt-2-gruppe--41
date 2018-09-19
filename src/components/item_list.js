@@ -65,7 +65,11 @@ class ItemList extends Component {
     }
 
     updateSounds(){
-
+        this.setState({sounds:[
+                "sounds/" + this.props.soundCategory + "/0.mp3",
+                "sounds/" + this.props.soundCategory + "/1.mp3",
+                "sounds/" + this.props.soundCategory + "/2.mp3",
+                "sounds/" + this.props.soundCategory + "/3.mp3"]})
     }
 
     //Map contentList to view as content tabs over content

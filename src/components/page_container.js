@@ -11,7 +11,7 @@ class PageContainer extends Component {
             //will be the chosen category for the media.
             pictureCategory: "green",
             textCategory: "animal",
-            soundCategory: "",
+            soundCategory: "instrument",
         };
 
         this.onTabChange = this.onTabChange.bind(this);
@@ -54,7 +54,9 @@ class PageContainer extends Component {
                     <div dangerouslySetInnerHTML={{__html: this.state.currentListItem.picture}} />
                     <div>
                         <p>{this.state.currentListItem.text}</p>
-                        <button>MEDIA BUTTON</button>
+                        <audio controls>
+                            <source src={this.state.currentListItem.sound} type="audio/mp3"/>
+                        </audio>
                     </div>
                     <CategoryList onCategoryChange={this.onCategoryChange}/>
                 </div>
