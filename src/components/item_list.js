@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Item from './item';
 
-//Props will be the function onTabChange, graphic, sound and text categories
+//Props will be the function onTabChange, graphic, soundCategory and textCategory categories
 class ItemList extends Component {
     constructor(props) {
         super(props);
@@ -11,13 +11,12 @@ class ItemList extends Component {
             pictures:[],
             texts: [],
             sounds: [],
-            selected: null
         };
 
     }
 
     //Fetch data on init
-    componentDidMount() {
+    componentWillMount() {
         this.updatePictures();
         this.updateTexts();
         this.updateSounds();
@@ -25,24 +24,24 @@ class ItemList extends Component {
 
     //Fetch data on props update
     componentDidUpdate(prevProps) {
-        if (prevProps.picture !== this.props.picture) {
+        if (prevProps.pictureCategory !== this.props.pictureCategory) {
             this.updatePictures();
         }
-        else if (prevProps.text !== this.props.text) {
+        else if (prevProps.textCategory !== this.props.textCategory) {
             this.updateTexts();
         }
-        else if (prevProps.sound !== this.props.sound) {
+        else if (prevProps.soundCategory !== this.props.soundCategory) {
             this.updateSounds();
         }
-
     }
 
     updatePictures(){
+        console.log(this.props.pictureCategory);
         let pictures = [];
         for(let x = 0 ; x < 1; x++ ){
-            let url = "img/"+ this.props.picture + "/"+ x + ".svg";
+            let url = "img/"+ this.props.pictureCategory + "/"+ x + ".svg";
             fetch(url)
-                .then(response => <div dangerouslySetInnerHTML={{__html: response.text()}} />)
+                .then(response => response.text())
                 .then(p => pictures.push(p));
         }
         this.setState({pictures: pictures});
@@ -58,30 +57,25 @@ class ItemList extends Component {
 
 
     // Css for showing selected item
-    selectItem(event) {
-        if (this.state.selected !== null){
-            this.state.selected.style.background = "white";
-        }
-        this.setState({selected: event.target});
-        event.target.style.background = "#ebebeb";
-    };
+
 
 
     //Map contentList to view as content tabs over content
     renderListItems() {
         let temp = [];
-        for(let i = 0; i < this.state.pictures.length ; i++) {
+        for(let i = 0; i < 4 ; i++) {
             temp.push(<Item
-                selectItem={this.selectItem.bind(this)}
+                onTabClicked={this.props.onTabChange}
                 picture={this.state.pictures[i]}
                 text={this.state.texts[i]}
-                sound={this.state.sounds[i]} key={i}/>)
+                sound={this.state.sounds[i]}
+                key={i}/>)
         }
         return temp;
     };
 
     render() {
-        console.log("SEHER",this.renderListItems());
+        console.log(this.renderListItems());
         return (
             <div className={"item_list"}>
                 {this.renderListItems()}

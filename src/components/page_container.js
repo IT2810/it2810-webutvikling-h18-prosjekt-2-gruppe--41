@@ -9,9 +9,9 @@ class PageContainer extends Component {
         this.state = {
             currentListItem: "",
             //will be the chosen category for the media.
-            picture: "green",
-            text: "",
-            sound: "",
+            pictureCategory: "green",
+            textCategory: "",
+            soundCategory: "",
         };
 
         this.onTabChange = this.onTabChange.bind(this);
@@ -28,16 +28,16 @@ class PageContainer extends Component {
 
     //Make sure that when a category is changed, we need to render again
     onCategoryChange(name, value){
-        //name would for example be picture and value could be blue
+        //name would for example be pictureCategory and value could be blue
         console.log("CategoryChanged",name,value);
-        if(name === "picture"){
-            this.setState({picture: value});
+        if(name === "pictureCategory"){
+            this.setState({pictureCategory: value});
         }
         else if(name === "text"){
-            this.setState({text: value});
+            this.setState({textCategory: value});
         }
-        else if(name === "sound"){
-            this.setState({sound: value});
+        else if(name === "soundCategory"){
+            this.setState({soundCategory: value});
         }
 
     }
@@ -45,13 +45,14 @@ class PageContainer extends Component {
 
     render() {
         console.log("Render PageContainer");
+        console.log("current",this.state.currentListItem.picture);
         return(
             <div className="page_container">
                 <h1 className={"header"}>SHOWROOM</h1>
-                <ItemList onTabCange={this.onTabChange} picture={this.state.picture} text={this.state.text} sound={this.state.sound} />
+                <ItemList onTabChange={this.onTabChange} picture={this.state.pictureCategory} text={this.state.textCategory} sound={this.state.soundCategory} />
 
                 <div className={"showroom"}>
-                    <img src={"https://pbs.twimg.com/profile_images/972154872261853184/RnOg6UyU_400x400.jpg"}/>
+                    <div dangerouslySetInnerHTML={{__html: this.state.currentListItem.picture}} />
                     <div>
                         <p>some text that is loaded</p>
                         <button>MEDIA BUTTON</button>

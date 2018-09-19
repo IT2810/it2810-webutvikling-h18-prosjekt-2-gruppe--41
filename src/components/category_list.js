@@ -10,13 +10,13 @@ class CategoryList extends Component {
             Picture
             <form>
                 <div>
-                    <input type={"radio"} name={"picture"} value={"green"} defaultChecked onChange={() => {this.props.onCategoryChange("picture","green")}}/> Green
+                    <input type={"radio"} name={"pictureCategory"} value={"green"} defaultChecked onChange={() => {this.props.onCategoryChange("pictureCategory","green")}}/> Green
                 </div>
                 <div>
-                    <input type={"radio"} name={"picture"} value={"red"} onChange={() => {this.props.onCategoryChange("picture","red")}}/> Red
+                    <input type={"radio"} name={"pictureCategory"} value={"red"} onChange={() => {this.props.onCategoryChange("pictureCategory","red")}}/> Red
                 </div>
                 <div>
-                    <input type={"radio"} name={"picture"} value={"blue"} onChange={() => {this.props.onCategoryChange("picture","blue")}}/> Blue
+                    <input type={"radio"} name={"pictureCategory"} value={"blue"} onChange={() => {this.props.onCategoryChange("pictureCategory","blue")}}/> Blue
                 </div>
             </form>
             <br/>
