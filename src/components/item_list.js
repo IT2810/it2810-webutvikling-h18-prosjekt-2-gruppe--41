@@ -21,7 +21,6 @@ class ItemList extends Component {
 
     //Fetch data on init
     componentWillMount() {
-        console.log("willmount");
         this.updatePictures();
         this.updateTexts();
         this.updateSounds();
@@ -42,32 +41,26 @@ class ItemList extends Component {
 
     //Fetch the pictures for the current category, and update state gradually
     updatePictures(){
-        let indexes = [0, 1, 2, 3];
         for(let x = 0 ; x < 4; x++ ){
             let url = "img/"+ this.props.pictureCategory + "/"+ x + ".svg";
             axios.get(url)
                 .then(response => {
-                    var randomIndex = Math.floor(Math.random() * (4 - x));
                     const newPictures = this.state.pictures;
-                    newPictures[indexes[randomIndex]] = response.data;
+                    newPictures[x] = response.data;
                     this.setState({pictures: newPictures});
-                    indexes.splice(randomIndex, 1);
                 });
         }
     }
 
     //Fetch the texts for the current text category, and update state gradually
     updateTexts(){
-        let indexes = [0, 1, 2, 3];
         for(let x = 0 ; x < 4; x++ ){
             let url = "text.json";
             axios.get(url)
                 .then(response => {
-                    var randomIndex = Math.floor(Math.random() * (4 - x));
                     const newTexts = this.state.texts;
-                    newTexts[x] = response.data[this.props.textCategory][indexes[randomIndex]];
+                    newTexts[x] = response.data[this.props.textCategory][x];
                     this.setState({texts: newTexts});
-                    indexes.splice(randomIndex, 1);
                 });
         }
     }

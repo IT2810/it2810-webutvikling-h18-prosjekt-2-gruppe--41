@@ -26,7 +26,7 @@ class PageContainer extends Component {
             currentListItem: listItem
             })
         this.unselectTabs();
-        document.getElementById(listItem.id).style.backgroundImage="linear-gradient(#40464b,#40464b,#2E2E2E,#292929)";
+        document.getElementById(listItem.id).style.backgroundImage="linear-gradient(#40464b,#40464b,white)";
         document.getElementById("showroom_audio_container").style.display='block';
     }
 
@@ -62,17 +62,17 @@ class PageContainer extends Component {
                 <h1 className={"header"}>SHOWROOM</h1>
                 <CategoryList onCategoryChange={this.onCategoryChange}/>
                 <div className="showroom_container">
-                <div className={"showroom"}>
-                    <ItemList onTabChange={this.onTabChange} pictureCategory={this.state.pictureCategory} textCategory={this.state.textCategory} soundCategory={this.state.soundCategory} />
-                    <div dangerouslySetInnerHTML={{__html: this.state.currentListItem.picture}} className="showroom_image"/>
-                    <div className="showroom_text_container">
-                      <p className="showroom_text">{this.state.currentListItem.text}</p>
-                    </div>
-                    <div id="showroom_audio_container">
-                    <audio className="showroom_audio" src={this.state.currentListItem.sound} controls/>
+                    <div className={"showroom"}>
+                        <ItemList onTabChange={this.onTabChange} pictureCategory={this.state.pictureCategory} textCategory={this.state.textCategory} soundCategory={this.state.soundCategory} />
+                        <div dangerouslySetInnerHTML={{__html: this.state.currentListItem.picture}} className="showroom_image"/>
+                        <div className="showroom_text_container">
+                            <p className="showroom_text">{this.state.currentListItem.text}</p>
+                        </div>
+                        <div id="showroom_audio_container">
+                            <audio className="showroom_audio" src={this.state.currentListItem.sound} controls/>
+                        </div>
                     </div>
                 </div>
-              </div>
             </div>
         )
     }
