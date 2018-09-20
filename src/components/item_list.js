@@ -58,6 +58,8 @@ class ItemList extends Component {
             axios.get(url)
                 .then(response => {
                     const newTexts = this.state.texts;
+                    console.log(response.data,this.props.textCategory);
+
                     newTexts[x] = response.data[this.props.textCategory][x];
                     this.setState({texts: newTexts});
                 });
