@@ -35,7 +35,7 @@ Our solution is based on React (and JSX) where we used the create-react-app to g
 we have used classes that extends react component instead of using stateless functional components. This is 
 because we felt that it was convenient to save the state in our components.
 
-In this project we where not suppose to use other libraries like redux and mobx to handle the state. 
+In this project we were not supposed to use other libraries like redux and mobx to handle the state. 
 Therefore the use of callback functions has been a really important part of this project. Also we where 
 not allowed to use any other react libraries for UI components, so everything is made from scratch. 
 
@@ -56,7 +56,18 @@ special method for loading the mp3 files. All we did here where changing the sou
 /Oscar
 
 ## Testing   
+When testing the user interface of the application, we wanted to make sure it worked properly on
+different browsers and that it scaled well on different screens and browser windows.
 
+When we tested the interface in a browser, we tested
+Chrome, Firefox and Safari. In all the browsers, the functionallity worked the way it was intended, and
+the page looked similar in all the browsers, other than the html5 audio tag looked differently in all 
+the of the browsers. In each browser, we also changed the browser window size to see how the page scaled
+on a computer. This works very well. When the page gets too narrow, the text next to the picture is placed
+below the picture, preventing the user to scroll sidewards, which can be annoying. The computers we tested with
+were a MacBook Pro 15" and 13". When testing on mobile phones, we used an iPhone 8 Plus and a Galaxy S8 and also
+simulated an iPad in the browser. This worked very well, and the page fills the screens as intended, and the
+buttons are still easy to use.
 
 
 ## Sources
