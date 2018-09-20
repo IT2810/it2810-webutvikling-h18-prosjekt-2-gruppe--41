@@ -23,13 +23,13 @@ class CategoryList extends Component {
             Text
             <form>
                 <div>
-                    <input type={"radio"} name={"textCategory"} defaultChecked value={"animal"} onChange={() => {this.props.onCategoryChange("textCategory","animal")}}/> Animal
+                    <input type={"radio"} name={"textCategory"} defaultChecked value={"haiku"} onChange={() => {this.props.onCategoryChange("textCategory","haiku")}}/> Haiku
                 </div>
                 <div>
-                    <input type={"radio"} name={"textCategory"} value={"people"} onChange={() => {this.props.onCategoryChange("textCategory","people")}}/> People
+                    <input type={"radio"} name={"textCategory"} value={"songs"} onChange={() => {this.props.onCategoryChange("textCategory","songs")}}/> Songs
                 </div>
                 <div>
-                    <input type={"radio"} name={"textCategory"} value={"city"} onChange={() => {this.props.onCategoryChange("textCategory","city")}}/> Cities
+                    <input type={"radio"} name={"textCategory"} value={"poem"} onChange={() => {this.props.onCategoryChange("textCategory","poem")}}/> Poem
                 </div>
             </form>
             <br/>

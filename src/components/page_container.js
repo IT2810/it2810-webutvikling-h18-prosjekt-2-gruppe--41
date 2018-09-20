@@ -10,7 +10,7 @@ class PageContainer extends Component {
             currentListItem: {},
             //will be the chosen category for the media.
             pictureCategory: "green",
-            textCategory: "animal",
+            textCategory: "haiku",
             soundCategory: "instrument",
         };
 
