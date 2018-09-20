@@ -53,7 +53,13 @@ The media player was simply added with the HTML5 audio tag, and we did not need 
 special method for loading the mp3 files. All we did here where changing the source path in the audio tag.
 
 **Responsive Web Design**  
-/Oscar
+In this project we have implemented responsive design using viewport, scaling images and divs and media-queries.
+
+The viewport is set directly in the HTML-file as a <meta> tag. The purpose is to set the width of the page to follow the screen-width of the device, and the initial zoom level when the page is first loaded.
+
+Further on, we have used Viewport width (vw) and viewport height (vh) to scale images, divs etc. Vw and vh are length units representing 1% of the viewport size. By doing this you can make sure there will be no overflow where you dont want it. If you want there to be content not visible on the top of the page, 'Overflow-y: scroll' is a good  way of handling this. 
+
+Media-queries are usefull if you want to conditionally apply styles with the CSS when the window size changes. In this project we change the layout of the div containing the image, text and audio when the screen-size is under 600px.  
 
 ## Testing   
 When testing the user interface of the application, we wanted to make sure it worked properly on
