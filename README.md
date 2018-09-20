@@ -72,9 +72,9 @@ the of the browsers. In each browser, we also changed the browser window size to
 on a computer. This works very well. When the page gets too narrow, the text next to the picture is placed
 below the picture, preventing the user to scroll sidewards, which can be annoying. The computers we tested with
 were a MacBook Pro 15" and 13". When testing on mobile phones, we used an iPhone 8 Plus and a Galaxy S8 and also
-simulated an iPad in the browser. This worked very well, and the page fills the screens as intended, and the
-buttons are still easy to use.
-
+simulated an iPad in the browser. We tested both vertically and horizontally. Vertically it works very well, and
+everything fits into the screen as intended. Horizontally, the page also works fine, although browsing a web application
+horizontally is not as pleasing and easy as when browsing vertically. 
 
 ## Sources
 **SVG-Files**
