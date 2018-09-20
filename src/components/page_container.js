@@ -67,10 +67,11 @@ class PageContainer extends Component {
                         <div dangerouslySetInnerHTML={{__html: this.state.currentListItem.picture}} className="showroom_image"/>
                         <div className="showroom_text_container">
                             <p className="showroom_text">{this.state.currentListItem.text}</p>
+
+                            <audio id="showroom_audio_container" className="showroom_audio" src={this.state.currentListItem.sound} controls/>
+
                         </div>
-                        <div id="showroom_audio_container">
-                            <audio className="showroom_audio" src={this.state.currentListItem.sound} controls/>
-                        </div>
+
                     </div>
                 </div>
             </div>

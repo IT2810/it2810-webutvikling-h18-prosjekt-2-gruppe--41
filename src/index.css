@@ -65,6 +65,7 @@ body {
 }
 .showroom_container{
   width: 100vw;
+    min-height: calc(100vh - 220px);
     border-radius: 4px;
   background: #40464b;
   display: flex;
@@ -73,7 +74,6 @@ body {
 .showroom {
     width: 95vw;
     margin: 0 auto;
-
     background: white;
     display: flex;
     align-content: flex-start;
@@ -82,7 +82,7 @@ body {
 
 }
 .showroom_image{
-    margin-top: 10px;
+  margin-top: 10px;
   width: 55vw;
   max-height: 350px;
 }
@@ -91,10 +91,10 @@ body {
   height: 50vw;
   max-height: 350px;
   display: block;
-  margin: auto;
+  margin: 40px auto;
 }
 .showroom_text_container{
-    margin-top: 10px;
+  margin-top: 40px;
   width: 40vw;
 }
 .showroom_text{
@@ -123,13 +123,11 @@ body {
 }
 
 #showroom_audio_container{
-    margin-top: 10px;
   display: none;
-  width: 100vw;
+
 }
 .showroom_audio{
-  min-width: 300px;
-  width: 50%;
+  width: 90%;
   display: block;
   margin: auto;
   margin-bottom: 10px;
