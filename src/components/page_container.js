@@ -2,20 +2,23 @@ import React, { Component } from 'react';
 import ItemList from "./item_list";
 import CategoryList from "./category_list";
 
-class Page_container extends Component {
+class PageContainer extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            currentListItem: "",
+            currentListItem: {},
             //will be the chosen category for the media.
-            graphic: "",
-            text: "",
-            sound: "",
+            pictureCategory: "green",
+            textCategory: "animal",
+            soundCategory: "instrument",
         };
 
         this.onTabChange = this.onTabChange.bind(this);
+        this.onCategoryChange = this.onCategoryChange.bind(this);
     }
+
+
 
     onTabChange(listItem){
         this.setState({
@@ -25,27 +28,40 @@ class Page_container extends Component {
     }
 
 
+    //Make sure that when a category is changed, we need to render again
+    onCategoryChange(name, value){
+        //name would for example be pictureCategory and value could be blue
+        if(name === "pictureCategory"){
+            this.setState({pictureCategory: value})
+        }
+        else if(name === "textCategory"){
+            this.setState({textCategory: value});
+        }
+        else if(name === "soundCategory"){
+            this.setState({soundCategory: value});
+        }
+
+    }
+
+
     render() {
         return(
             <div className="page_container">
                 <h1 className={"header"}>SHOWROOM</h1>
-                <ItemList onTabCange={this.onTabChange} graphic={this.graphic} text={this.text} sound={this.sound} />
+                <ItemList onTabChange={this.onTabChange} pictureCategory={this.state.pictureCategory} textCategory={this.state.textCategory} soundCategory={this.state.soundCategory} />
 
                 <div className={"showroom"}>
-                    <img src={"https://pbs.twimg.com/profile_images/972154872261853184/RnOg6UyU_400x400.jpg"}/>
+                    <div dangerouslySetInnerHTML={{__html: this.state.currentListItem.picture}} />
                     <div>
-                        <p>some text that is loaded</p>
-                        <button>MEDIA BUTTON</button>
+                        <p>{this.state.currentListItem.text}</p>
+                        <audio src={this.state.currentListItem.sound} controls/>
                     </div>
-                    <CategoryList/>
+                    <CategoryList onCategoryChange={this.onCategoryChange}/>
                 </div>
-
-
-
             </div>
         )
     }
 }
 
-export default Page_container;
+export default PageContainer;
 
