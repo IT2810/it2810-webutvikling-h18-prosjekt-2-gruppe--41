@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
-  background: white;
+  background: #40464b;
 }
 .page_container {
     width: 100vw;
@@ -18,50 +18,62 @@ body {
     text-align: center;
     font-size: 50px;
     margin: 0px;
-    background: white;
     padding-top: 10px;
+    color: white;
+    animation: shake 0.6s;
+    animation-iteration-count: infinite;
 }
+
 .categories{
     width: 100vw;
     height: 150px;
     display: flex;
+    margin-bottom: 5px;
 }
 .category{
   display:block;
   margin: auto;
+  margin-top: 0px;
+  color: white;
 }
 
 .item_list {
     height: 40px;
     width: 100vw;
-    background-image: linear-gradient(white, lightgrey);
+    background-image: linear-gradient(#40464b,#40464b,white, white);
     display: flex;
-    flex-direction: row;
-    border-bottom: 3px solid lightgrey;
+
 }
 
 .item {
-    margin: 2px;
+    margin: 1px;
+    margin-top: 0;
     width: 100%;
     height: 100%;
-    border-radius: 4px;
-    border-bottom: 1px solid grey;
-    align-content: center;
+    border-radius: 2px;
+    align-content: flex-end;
     text-align: center;
     cursor: pointer;
-    background:white;
+    background-image: linear-gradient(#40464b,#3a3a3a);
+    color: white;
 }
 
 .item:hover{
-    background-image: linear-gradient(white,#ebebeb);
+    background-image: linear-gradient(#40464b,#2E2E2E) !important;
+
+}
+.showroom_container{
+  width: 100vw;
+  background: #40464b;
+  display: flex;
 
 }
 
-
 .showroom {
-    width: 100vw;
-    height: calc(100vh - 220px);
-    background: lightgrey;
+    width: 95vw;
+    margin: 0 auto;
+    height: calc(100vh - 225px);
+    background: white;
     display: flex;
     align-content:space-between;
     flex-wrap: wrap;
@@ -69,7 +81,7 @@ body {
     overflow-y: scroll;
 }
 .showroom_image{
-  width: 60vw;
+  width: 55vw;
   max-height: 350px;
 }
 #Capa_1{
@@ -88,6 +100,10 @@ body {
 
 @media only screen and (max-width: 600px){
   .showroom_image{
+    margin-top: -40px;
+    width: 100vw;
+  }
+  #Capa_1{
     width: 100vw;
   }
   .showroom_text_container{
@@ -100,7 +116,8 @@ body {
   }
 }
 
-.showroom_audio_container{
+#showroom_audio_container{
+  display: none;
   width: 100vw;
 }
 .showroom_audio{
@@ -109,4 +126,20 @@ body {
   display: block;
   margin: auto;
   margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+@keyframes shake {
+
+    0% {transform: translate(1px, 1px) rotate(0deg);}
+    10% { transform: translate(-1px, -1px) rotate(-0.5deg);}
+    20% { transform: translate(0px, 0px) rotate(0deg); }
+    30% { transform: translate(0px, 1px) rotate(0.5deg);}
+    40% { transform: translate(1px, 0px) rotate(0deg); }
+    50% { transform: translate(-1px, 1px) rotate(-0.5deg);}
+    60% { transform: translate(0px, 1px) rotate(0deg);}
+    70% { transform: translate(1px, 0px) rotate(0.5deg); }
+    80% { transform: translate(-1px, -1px) rotate(0deg); }
+    90% { transform: translate(1px, 1px) rotate(-0.5deg); }
+    100% {transform: translate(1px, 0px) rotate(0deg);}
 }

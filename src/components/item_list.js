@@ -78,12 +78,14 @@ class ItemList extends Component {
     renderListItems() {
         let temp = [];
         for(let i = 0; i < 4 ; i++) {
+            let id ="ART PIECE "+(i+1)
             temp.push(<Item
                 onTabClicked={this.props.onTabChange}
                 picture={this.state.pictures[i]}
                 text={this.state.texts[i]}
                 sound={this.state.sounds[i]}
-                key={i}/>)
+                key={i}
+                id={id}/>)
         }
         return temp;
     };

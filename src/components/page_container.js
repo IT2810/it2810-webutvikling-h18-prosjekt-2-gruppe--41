@@ -8,7 +8,7 @@ class PageContainer extends Component {
         super(props);
         this.state = {
             // Welcome view
-            currentListItem: {picture:"Welcome"},
+            currentListItem: {text:"Welcome"},
             // Will be the chosen category for the media.
             pictureCategory: "green",
             textCategory: "haiku",
@@ -25,6 +25,15 @@ class PageContainer extends Component {
         this.setState({
             currentListItem: listItem
             })
+        this.unselectTabs();
+        document.getElementById(listItem.id).style.backgroundImage="linear-gradient(#40464b,#40464b,#2E2E2E,#292929)";
+        document.getElementById("showroom_audio_container").style.display='block';
+    }
+
+    unselectTabs(){
+      for(let i=1; i<5; i++){
+        document.getElementById("ART PIECE "+i).style.backgroundImage="linear-gradient(#40464b,#3a3a3a)";
+      }
     }
 
 
@@ -41,8 +50,9 @@ class PageContainer extends Component {
             this.setState({soundCategory: value});
         }
         // Changes the view after category change
-        this.setState({currentListItem: {picture:"Category changed ",text:"Text",sound:"sounds/animal/0.mp3"}})
-
+        this.setState({currentListItem: {picture:"",text:"Please choose a image from the tabs [Image 1-4]",sound:"sounds/animal/0.mp3"}})
+        this.unselectTabs();
+        document.getElementById("showroom_audio_container").style.display='none';
     }
 
 
@@ -51,16 +61,18 @@ class PageContainer extends Component {
             <div className="page_container">
                 <h1 className={"header"}>SHOWROOM</h1>
                 <CategoryList onCategoryChange={this.onCategoryChange}/>
+                <div className="showroom_container">
                 <div className={"showroom"}>
                     <ItemList onTabChange={this.onTabChange} pictureCategory={this.state.pictureCategory} textCategory={this.state.textCategory} soundCategory={this.state.soundCategory} />
                     <div dangerouslySetInnerHTML={{__html: this.state.currentListItem.picture}} className="showroom_image"/>
                     <div className="showroom_text_container">
                       <p className="showroom_text">{this.state.currentListItem.text}</p>
                     </div>
-                    <div className="showroom_audio_container">
+                    <div id="showroom_audio_container">
                     <audio className="showroom_audio" src={this.state.currentListItem.sound} controls/>
                     </div>
                 </div>
+              </div>
             </div>
         )
     }

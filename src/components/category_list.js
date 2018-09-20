@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import './category_list.css'
 
 class CategoryList extends Component {
 
@@ -8,43 +9,46 @@ class CategoryList extends Component {
         <div className={"categories"}>
           <div className="category">
             <h2>Picture</h2>
-            <form class="form">
-                <div className="inputGroup">
-                    <input type={"radio"} name={"pictureCategory"} value={"green"} defaultChecked onChange={() => {this.props.onCategoryChange("pictureCategory","green")}}/> Green
+            <form className="form">
+                <div>
+                    <input class="form-radio" type="radio" name={"pictureCategory"} value={"green"} defaultChecked onChange={() => {this.props.onCategoryChange("pictureCategory","green")}}/> Green
                 </div>
-                <div className="inputGroup">
-                    <input type={"radio"} name={"pictureCategory"} value={"red"} onChange={() => {this.props.onCategoryChange("pictureCategory","red")}}/> Red
+                <div>
+                    <input class="form-radio" type="radio" name={"pictureCategory"} value={"red"} onChange={() => {this.props.onCategoryChange("pictureCategory","red")}}/> Red
                 </div>
-                <div className="inputGroup">
-                    <input type={"radio"} name={"pictureCategory"} value={"blue"} onChange={() => {this.props.onCategoryChange("pictureCategory","blue")}}/> Blue
+                <div>
+                    <input class="form-radio" type="radio" name={"pictureCategory"} value={"blue"} onChange={() => {this.props.onCategoryChange("pictureCategory","blue")}}/> Blue
                 </div>
+
             </form>
-            <br/>
-            Text
+            </div>
+
+            <div className="category">
+            <h2>Text</h2>
             <form>
                 <div>
-                    <input type={"radio"} name={"textCategory"} defaultChecked value={"haiku"} onChange={() => {this.props.onCategoryChange("textCategory","haiku")}}/> Haiku
+                    <input class="form-radio" type={"radio"} name={"textCategory"} defaultChecked value={"haiku"} onChange={() => {this.props.onCategoryChange("textCategory","haiku")}}/> Haiku
                 </div>
                 <div>
-                    <input type={"radio"} name={"textCategory"} value={"songs"} onChange={() => {this.props.onCategoryChange("textCategory","songs")}}/> Songs
+                    <input class="form-radio" type={"radio"} name={"textCategory"} value={"songs"} onChange={() => {this.props.onCategoryChange("textCategory","songs")}}/> Songs
                 </div>
                 <div>
-                    <input type={"radio"} name={"textCategory"} value={"poem"} onChange={() => {this.props.onCategoryChange("textCategory","poem")}}/> Poem
+                    <input class="form-radio" type={"radio"} name={"textCategory"} value={"poem"} onChange={() => {this.props.onCategoryChange("textCategory","poem")}}/> Poem
                 </div>
             </form>
           </div>
 
           <div className="category">
             <h2>Sound</h2>
-            <form class="form">
-                <div className="inputGroup">
-                    <input type={"radio"} name={"soundCategory"} defaultChecked value={"instrument"} onChange={() => {this.props.onCategoryChange("soundCategory","instrument")}}/> Instrument
+            <form className="form">
+                <div>
+                    <input class="form-radio" type={"radio"} name={"soundCategory"} defaultChecked value={"instrument"} onChange={() => {this.props.onCategoryChange("soundCategory","instrument")}}/> Instrument
                 </div>
-                <div className="inputGroup">
-                    <input type={"radio"} name={"soundCategory"} value={"animal"} onChange={() => {this.props.onCategoryChange("soundCategory","animal")}}/> Animal
+                <div>
+                    <input class="form-radio" type={"radio"} name={"soundCategory"} value={"animal"} onChange={() => {this.props.onCategoryChange("soundCategory","animal")}}/> Animal
                 </div>
-                <div className="inputGroup">
-                    <input type={"radio"} name={"soundCategory"} value={"nature"} onChange={() => {this.props.onCategoryChange("soundCategory","nature")}}/> Nature
+                <div>
+                    <input class="form-radio" type={"radio"} name={"soundCategory"} value={"nature"} onChange={() => {this.props.onCategoryChange("soundCategory","nature")}}/> Nature
                 </div>
             </form>
           </div>
