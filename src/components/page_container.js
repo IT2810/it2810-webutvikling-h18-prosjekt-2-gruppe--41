@@ -7,8 +7,9 @@ class PageContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentListItem: {},
-            //will be the chosen category for the media.
+            // Welcome view
+            currentListItem: {picture:"Welcome"},
+            // Will be the chosen category for the media.
             pictureCategory: "green",
             textCategory: "haiku",
             soundCategory: "instrument",
@@ -40,6 +41,8 @@ class PageContainer extends Component {
         else if(name === "soundCategory"){
             this.setState({soundCategory: value});
         }
+        // Changes the view after category change
+        this.setState({currentListItem: {picture:"Category changed ",text:"Text",sound:"sounds/animal/0.mp3"}})
 
     }
 
