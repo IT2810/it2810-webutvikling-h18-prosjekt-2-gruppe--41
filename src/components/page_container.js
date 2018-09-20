@@ -23,8 +23,7 @@ class PageContainer extends Component {
     onTabChange(listItem){
         this.setState({
             currentListItem: listItem
-            }
-        )
+            })
     }
 
 
@@ -48,15 +47,16 @@ class PageContainer extends Component {
         return(
             <div className="page_container">
                 <h1 className={"header"}>SHOWROOM</h1>
-                <ItemList onTabChange={this.onTabChange} pictureCategory={this.state.pictureCategory} textCategory={this.state.textCategory} soundCategory={this.state.soundCategory} />
-
+                <CategoryList onCategoryChange={this.onCategoryChange}/>
                 <div className={"showroom"}>
-                    <div dangerouslySetInnerHTML={{__html: this.state.currentListItem.picture}} />
-                    <div>
-                        <p>{this.state.currentListItem.text}</p>
-                        <audio src={this.state.currentListItem.sound} controls/>
+                    <ItemList onTabChange={this.onTabChange} pictureCategory={this.state.pictureCategory} textCategory={this.state.textCategory} soundCategory={this.state.soundCategory} />
+                    <div dangerouslySetInnerHTML={{__html: this.state.currentListItem.picture}} className="showroom_image"/>
+                    <div className="showroom_text_container">
+                      <p className="showroom_text">{this.state.currentListItem.text}</p>
                     </div>
-                    <CategoryList onCategoryChange={this.onCategoryChange}/>
+                    <div className="showroom_audio_container">
+                    <audio className="showroom_audio" src={this.state.currentListItem.sound} controls/>
+                    </div>
                 </div>
             </div>
         )
@@ -64,4 +64,3 @@ class PageContainer extends Component {
 }
 
 export default PageContainer;
-

@@ -1,57 +1,112 @@
 body {
   margin: 0;
   padding: 0;
-    font-family: Helvetica, Arial, sans-serif;
-    background: lightcyan;
+  font-family: Helvetica, Arial, sans-serif;
+  background: white;
 }
-
+.page_container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
 .header {
+    width: 100vw;
+    height: 60px;
     text-align: center;
-    margin: 1% auto;
     font-size: 50px;
+    margin: 0px;
+    background: white;
+    padding-top: 10px;
+}
+.categories{
+    width: 100vw;
+    height: 150px;
+    display: flex;
+}
+.category{
+  display:block;
+  margin: auto;
 }
 
 .item_list {
+    height: 40px;
+    width: 100vw;
+    background-image: linear-gradient(white, lightgrey);
     display: flex;
     flex-direction: row;
-    background: lightcyan;
+    border-bottom: 3px solid lightgrey;
 }
 
 .item {
-    margin: 1px;
+    margin: 2px;
     width: 100%;
-    padding: 1%;
+    height: 100%;
+    border-radius: 4px;
+    border-bottom: 1px solid grey;
+    align-content: center;
+    text-align: center;
     cursor: pointer;
     background:white;
 }
 
 .item:hover{
-    background: #ebebeb;
+    background-image: linear-gradient(white,#ebebeb);
+
 }
 
-.page_container {
-    background: #fbfff9;
-    width: 75%;
-    margin: 2% auto;
-}
-
-.item_view {
-    background: lightcyan;
-    display: flex;
-    flex-direction: row;
-    width: 50%;
-    margin: 0 auto;
-}
 
 .showroom {
-    background: white;
+    width: 100vw;
+    height: calc(100vh - 220px);
+    background: lightgrey;
     display: flex;
-    flex-direction: row;
-    margin: 1% auto;
-
+    align-content:space-between;
+    flex-wrap: wrap;
+    bottom: 0;
+    overflow-y: scroll;
+}
+.showroom_image{
+  width: 60vw;
+  max-height: 350px;
+}
+#Capa_1{
+  width: 50vw;
+  height: 50vw;
+  max-height: 350px;
+  display: block;
+  margin: auto;
+}
+.showroom_text_container{
+  width: 40vw;
+}
+.showroom_text{
+  padding-right: 10px;
 }
 
-.categories{
-    width: 20%;
-    margin: 1% auto;
+@media only screen and (max-width: 600px){
+  .showroom_image{
+    width: 100vw;
+  }
+  .showroom_text_container{
+    width: 100vw;
+  }
+  .showroom_text{
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+.showroom_audio_container{
+  width: 100vw;
+}
+.showroom_audio{
+  min-width: 300px;
+  width: 50%;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
 }
