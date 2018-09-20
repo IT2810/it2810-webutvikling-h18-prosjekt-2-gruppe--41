@@ -1,4 +1,4 @@
-#IT2810 Web development Project-2 Group 41
+# IT2810 Web development Project-2 Group 41
 
 The group consist of Oscar Vik, Martin Johansen and Kristoffer Gjerde.
 
@@ -10,7 +10,7 @@ The exhibition has responsive web design where layout, scaling and interaction c
 customize the device type and size of the screen. We are proud of the product we made and we 
 think it fits the requirements  as it should.
 
-##Content and functionality
+## Content and functionality
 The user is able to choose from 3 categories of images, 3 categories of audio and 3 categories of text,
 and based on these choices, we generate an exhibition with 4 combinations of an image, text and 
 audio. Each combination appears in separate section with a tab display.
@@ -29,7 +29,7 @@ also uploaded on github.
 The complexity of the content and the artistic spirit is not that advanced, but that is not the goal with
 this project either. 
 
-##Technologies
+## Technologies
 **React**   
 Our solution is based on React (and JSX) where we used the create-react-app to get started. In most cases 
 we have used classes that extends react component instead of using stateless functional components. This is 
