@@ -60,3 +60,15 @@ special method for loading the mp3 files. All we did here where changing the sou
 
 
 ## Sources
+**SVG-Files**
+* https://www.flaticon.com/
+
+**Texts**
+* http://dikt.org/
+* http://examples.yourdictionary.com/examples-of-haiku-poems.html
+* https://www.barnesanger.no/alle-barnesanger.html
+
+**Sounds**
+* http://soundbible.com/tags-short.html
+* https://www.zapsplat.com/
+
